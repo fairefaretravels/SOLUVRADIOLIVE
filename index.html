@@ -6,7 +6,7 @@
 <title>SOLUV RADIO</title>
 
 <style>
-:root {
+:root{
   --black:#0b0b0b;
   --dark:#141414;
   --gray:#222;
@@ -14,49 +14,39 @@
   --turq:#1de9b6;
   --white:#fff;
 }
-
-* { box-sizing:border-box; }
-body {
+*{box-sizing:border-box;}
+body{
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:radial-gradient(circle at top, #111, #000);
+  font-family:Arial,Helvetica,sans-serif;
+  background:radial-gradient(circle at top,#111,#000);
   color:#cfcfcf;
 }
-
-/* HEADER */
-header {
+header{
   padding:26px;
   background:linear-gradient(135deg,#111,#000);
   border-bottom:2px solid var(--blue);
 }
-header h1 {
+header h1{
   margin:0;
-  color:var(--white);
+  color:white;
   letter-spacing:3px;
 }
-header p {
-  color:var(--turq);
-  margin-top:6px;
-}
-
-/* LAYOUT */
-main { max-width:1300px; margin:auto; padding:20px; }
-section {
+header p{color:var(--turq);margin-top:6px;}
+main{max-width:1300px;margin:auto;padding:20px;}
+section{
   background:linear-gradient(135deg,#181818,#0f0f0f);
   border-radius:14px;
   padding:24px;
   margin-bottom:40px;
   border:1px solid #222;
 }
-h2 {
+h2{
   margin-top:0;
   color:white;
   border-left:4px solid var(--turq);
   padding-left:12px;
 }
-
-/* VIDEO */
-.video-box {
+.video-box{
   position:relative;
   padding-top:56.25%;
   border-radius:14px;
@@ -64,16 +54,14 @@ h2 {
   border:2px solid var(--blue);
   box-shadow:0 0 25px rgba(0,180,255,.35);
 }
-.video-box iframe {
+.video-box iframe{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
   border:0;
 }
-
-/* LIVE BADGE */
-.live-badge {
+.live-badge{
   position:absolute;
   top:12px;
   left:12px;
@@ -85,34 +73,22 @@ h2 {
   animation:pulse 1.4s infinite;
   z-index:5;
 }
-@keyframes pulse {
-  0% { box-shadow:0 0 0 0 rgba(255,0,0,.7);}
-  70% { box-shadow:0 0 0 16px rgba(255,0,0,0);}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(255,0,0,.7);}
+  70%{box-shadow:0 0 0 16px rgba(255,0,0,0);}
 }
-
-/* GRID */
-.grid {
+.grid{
   display:grid;
   grid-template-columns:2fr 1fr;
   gap:20px;
 }
-.grid-3 {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-/* CARDS */
-.card {
+.card{
   padding:20px;
   border-radius:12px;
   background:linear-gradient(135deg,#1f1f1f,#111);
   border:1px solid var(--blue);
 }
-.card h3 { color:var(--turq); margin-top:0; }
-
-/* BUTTON */
-.btn {
+.btn{
   display:inline-block;
   padding:10px 16px;
   background:var(--blue);
@@ -121,9 +97,7 @@ h2 {
   font-weight:bold;
   text-decoration:none;
 }
-
-/* OFF AIR */
-.off-air {
+.off-air{
   position:absolute;
   inset:0;
   background:rgba(0,0,0,.85);
@@ -132,10 +106,8 @@ h2 {
   justify-content:center;
   text-align:center;
 }
-
-/* MOBILE */
 @media(max-width:900px){
-  .grid { grid-template-columns:1fr; }
+  .grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -143,93 +115,106 @@ h2 {
 <body>
 
 <header>
-<h1>SOLUV RADIO</h1>
-<p>Healing Frequencies · Independent Voices · Community Power</p>
+  <h1>SOLUV RADIO</h1>
+  <p>Healing Frequencies · Independent Voices · Community Power</p>
 </header>
 
 <main>
 
+<!-- 🎬 FEATURED YOUTUBE -->
+<section>
+  <h2>📺 Featured SOLUV Radio Episode</h2>
+  <div class="video-box">
+    <iframe
+      src="https://www.youtube.com/embed/y_HQH_TEzBE"
+      title="SOLUV Radio Featured Video"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <p style="margin-top:14px;">
+    🎧 Broadcasting on
+    <a href="https://www.hits923atlanta.com/" target="_blank" style="color:#00b4ff;font-weight:bold;">
+      HITS 92.3 Atlanta
+    </a><br>
+    🗓 <strong>LIVE Thursdays · 7–9 PM EST</strong><br>
+    ☎️ Call In: <strong>404-254-4347</strong>
+  </p>
+</section>
+
 <!-- 🔴 LIVE FEED -->
 <section>
-<h2>🔴 Live SOLUV Radio</h2>
+  <h2>🔴 Live SOLUV Radio</h2>
 
-<div class="grid">
-  <div class="video-box">
-    <span class="live-badge">LIVE</span>
-    <iframe id="liveFeed"
-      src="https://vdo.ninja/?scene&room=SOLUVRADIOSHOW"
-      allow="autoplay; fullscreen"></iframe>
+  <div class="grid">
+    <div class="video-box">
+      <span class="live-badge">LIVE</span>
+      <iframe id="liveFeed"
+        src="https://vdo.ninja/?scene&room=SOLUVRADIOSHOW"
+        allow="autoplay;fullscreen">
+      </iframe>
 
-    <div class="off-air" id="offAir">
-      <p>
-        🎧 OFF AIR<br><br>
-        Thursdays · 7–9 PM EST<br>
-        HITS 92.3 Atlanta
-      </p>
+      <div class="off-air" id="offAir">
+        <p>
+          🎧 OFF AIR<br><br>
+          Thursdays · 7–9 PM EST<br>
+          HITS 92.3 Atlanta<br>
+          ☎️ 404-254-4347
+        </p>
+      </div>
+    </div>
+
+    <!-- CHAT -->
+    <div>
+      <h3 style="color:var(--turq)">💬 Live Community Chat</h3>
+      <a class="btn" href="https://tlk.io/sanecatv" target="_blank">Open Chat</a>
+      <div id="tlk-chat" style="margin-top:12px;min-height:360px;"></div>
+      <script async src="https://tlk.io/embed.js"
+        data-channel="sanecatv" data-theme="dark"></script>
     </div>
   </div>
-
-  <!-- CHAT -->
-  <div>
-    <h3 style="color:var(--turq)">💬 Community Chat</h3>
-    <a class="btn" href="https://tlk.io/sanecatv" target="_blank">Open Chat</a>
-    <div id="tlk-chat" style="margin-top:12px;min-height:360px;"></div>
-    <script async src="https://tlk.io/embed.js"
-      data-channel="sanecatv" data-theme="dark"></script>
-  </div>
-</div>
 </section>
 
 <!-- 🎵 MUSIC HUB -->
 <section>
-<h2>🎵 Music Hub</h2>
-<a class="btn" href="https://www.iradeo.com/station/v2/174583-bass-knockn-radio" target="_blank">
-Bass Knockn Radio Player
-</a>
-</section>
-
-<!-- 📺 VIDEO PLACEHOLDERS -->
-<section>
-<h2>📺 Station Video Gallery</h2>
-<div class="grid-3">
-  <div class="card">🎥 Video Placeholder</div>
-  <div class="card">🎥 Video Placeholder</div>
-  <div class="card">🎥 Video Placeholder</div>
-</div>
+  <h2>🎵 Music Hub</h2>
+  <a class="btn" href="https://www.iradeo.com/station/v2/174583-bass-knockn-radio" target="_blank">
+    Bass Knockn Radio Player
+  </a>
 </section>
 
 <!-- 🎮 GAME -->
 <section>
-<h2>🎮 Game With Us Live</h2>
-<div class="card">
-<strong>DEY SAID — LET’S PLAY</strong><br>
-Interactive community game nights
-</div>
+  <h2>🎮 Game With Us Live</h2>
+  <div class="card">
+    <strong>DEY SAID — LET’S PLAY</strong><br>
+    Community interactive game nights
+  </div>
 </section>
 
 <!-- 🎤 ARTISTS -->
 <section>
-<h2>🎤 Artist Music Links</h2>
-<div class="card">
-2 NITE (DISCO LOVE) — Mackinthedark<br>
-(DistroKid Link Coming Soon)
-</div>
+  <h2>🎤 Artist Music Links</h2>
+  <div class="card">
+    2 NITE (DISCO LOVE) — Mackinthedark<br>
+    (DistroKid Link Coming Soon)
+  </div>
 </section>
 
 <!-- 📚 RESOURCES -->
 <section>
-<h2>📚 Resources</h2>
-<ul>
-<li><a href="https://dol.georgia.gov/youth" target="_blank">Youth Resources GA</a></li>
-<li><a href="https://students.yourlearning.ibm.com/activity/ILB-ZKDDNXPEDJGXDJ9X" target="_blank">Free Tech Classes</a></li>
-<li><a href="https://autismpartnershipfoundation.org/rbt80k/" target="_blank">Free Behavior Technician Training</a></li>
-</ul>
+  <h2>📚 Resources</h2>
+  <ul>
+    <li><a href="https://dol.georgia.gov/youth" target="_blank">Youth Resources GA</a></li>
+    <li><a href="https://students.yourlearning.ibm.com/activity/ILB-ZKDDNXPEDJGXDJ9X" target="_blank">Free Tech Classes</a></li>
+    <li><a href="https://autismpartnershipfoundation.org/rbt80k/" target="_blank">Free Behavior Technician Training</a></li>
+  </ul>
 </section>
 
 <!-- 📅 BOOKING -->
 <section>
-<h2>📅 Booking</h2>
-<a class="btn" href="#" target="_blank">SANECA TV — Book Now</a>
+  <h2>📅 Booking</h2>
+  <a class="btn" href="#" target="_blank">SANECA TV — Book Now</a>
 </section>
 
 </main>
