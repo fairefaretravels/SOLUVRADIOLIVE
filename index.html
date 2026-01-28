@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SOLUV RADIO</title>
   <style>
@@ -234,13 +238,51 @@ footer {
 
 <main>
 
-<!-- ===== LIVE BROADCAST ===== -->
+<!-- ===== TOP EMBEDDED YOUTUBE ===== -->
 <section id="live">
   <h2>Now Broadcasting</h2>
   <div class="video-box">
-    <iframe src="https://vdo.ninja/?scene&room=SOLUVRADIOSHOW" title="SOLUV RADIO Live Show" allowfullscreen></iframe>
+    <!-- Your working YouTube embed -->
+    <iframe 
+      src="https://www.youtube.com/embed/y_HQH_TEzBE" 
+      title="SOLUV Radio Feature Video"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
   </div>
   <p>🎙 Catch us live every Thursday 7–9PM EST on <a href="https://www.hits923atlanta.com/" target="_blank">HITS 92.3 Atlanta</a></p>
+</section>
+
+<!-- ===== PLACEHOLDER VIDEOS ===== -->
+<section>
+  <h2>Station Video Gallery</h2>
+  <div class="grid-3">
+    <!-- Replace "PLACEHOLDER_ID" with actual IDs when ready -->
+    <div class="video-box">
+      <iframe 
+        src="https://www.youtube.com/embed/PLACEHOLDER_ID_1" 
+        title="Video Placeholder 1" allowfullscreen>
+      </iframe>
+    </div>
+    <div class="video-box">
+      <iframe 
+        src="https://www.youtube.com/embed/PLACEHOLDER_ID_2" 
+        title="Video Placeholder 2" allowfullscreen>
+      </iframe>
+    </div>
+    <div class="video-box">
+      <iframe 
+        src="https://www.youtube.com/embed/PLACEHOLDER_ID_3" 
+        title="Video Placeholder 3" allowfullscreen>
+      </iframe>
+    </div>
+    <div class="video-box">
+      <iframe 
+        src="https://www.youtube.com/embed/PLACEHOLDER_ID_4" 
+        title="Video Placeholder 4" allowfullscreen>
+      </iframe>
+    </div>
+  </div>
 </section>
 
 <!-- ===== MUSIC HUB ===== -->
@@ -291,9 +333,9 @@ footer {
 <section id="shows">
   <h2>DJ Schedule & Shows</h2>
   <div class="grid-3">
-    <div class="card"><h3>SOLUV WORD OF THE WEEK</h3><p>Daily · Healing + Motivation</p></div>
-    <div class="card"><h3>ARTISTS AFTER DARK</h3><p>Interviews & Premieres</p></div>
-    <div class="card"><h3>NIGHT FREQUENCY</h3><p>Late Night Sonic Therapy</p></div>
+    <div class="card"><h3>SOLUV WORD OF THE WEEK</h3></div>
+    <div class="card"><h3>ARTISTS AFTER DARK</h3></div>
+    <div class="card"><h3>NIGHT FREQUENCY</h3></div>
   </div>
 </section>
 
@@ -326,12 +368,9 @@ footer {
 </footer>
 
 <script>
-  // MOBILE NAV TOGGLE
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
-  navToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show-nav");
-  });
+  navToggle.addEventListener("click", () => navLinks.classList.toggle("show-nav"));
 </script>
 
 </body>
