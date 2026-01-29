@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SOLUV RADIO</title>
+  <title>SOLUV RADIO SHOW</title>
 
   <style>
     :root {
@@ -14,6 +14,7 @@
       --white: #ffffff;
       --blue: #00b4ff;
       --turquoise: #1de9b6;
+      --red: #ff3b3b;
     }
 
     * { box-sizing: border-box; }
@@ -23,7 +24,6 @@
       font-family: Arial, Helvetica, sans-serif;
       background: var(--black);
       color: var(--light-gray);
-      line-height: 1.6;
     }
 
     header {
@@ -42,13 +42,6 @@
     header p {
       margin: 6px 0 0;
       color: var(--turquoise);
-      font-size: 0.95rem;
-    }
-
-    header a {
-      color: var(--blue);
-      text-decoration: none;
-      font-weight: bold;
     }
 
     main {
@@ -71,6 +64,30 @@
       padding-left: 12px;
     }
 
+    /* LIVE INDICATOR */
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .live-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--red);
+      border-radius: 50%;
+      animation: pulse 1.2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.4; }
+      100% { opacity: 1; }
+    }
+
     .video-box {
       position: relative;
       padding-top: 56.25%;
@@ -88,18 +105,18 @@
       border: none;
     }
 
+    /* MUSIC HUB */
     .audio-player {
-      margin-top: 16px;
+      margin-top: 20px;
       background: var(--gray);
-      padding: 16px;
+      padding: 24px;
       border-radius: 8px;
       text-align: center;
     }
 
-    .playlist iframe {
+    .audio-player iframe {
       width: 100%;
-      height: 380px;
-      border-radius: 8px;
+      height: 220px; /* TALLER */
       border: none;
     }
 
@@ -160,12 +177,6 @@
 <header>
   <h1>SOLUV RADIO</h1>
   <p>Healing Frequencies · Independent Voices · Community Power</p>
-  <p>
-    Partner Station:
-    <a href="https://hits923atlanta.com" target="_blank">
-      HITS 92.3 Atlanta
-    </a>
-  </p>
 </header>
 
 <main>
@@ -174,13 +185,16 @@
 <section>
   <h2>Live Broadcast</h2>
 
-  <div class="video-box">
-    <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID"></iframe>
+  <div class="live-badge">
+    <span class="live-dot"></span> LIVE NOW
   </div>
 
-  <div class="audio-player">
-    <p><strong>Audio Stream</strong></p>
-    <audio controls src="YOUR_ICECAST_OR_STREAM_URL"></audio>
+  <div class="video-box">
+    <iframe
+      src="https://vdo.ninja/?scene&room=SOLUVRADIOSHOW"
+      allow="autoplay; camera; microphone"
+      allowfullscreen>
+    </iframe>
   </div>
 </section>
 
@@ -190,31 +204,11 @@
 
   <div class="audio-player">
     <iframe
-      width="100%"
-      height="150"
       src="https://www.iradeo.com/station/player/174583?compact=true"
-      frameborder="0"
       scrolling="no"
       allow="autoplay">
     </iframe>
   </div>
-</section>
-
-<!-- MENTAL HEALTH -->
-<section>
-  <h2>Mental Health & Wellness</h2>
-  <ul>
-    <li>Pause when your body tells you to.</li>
-    <li>Curate your sound environment intentionally.</li>
-    <li>Community heals — do not isolate.</li>
-    <li>Art is therapy when used consciously.</li>
-  </ul>
-</section>
-
-<!-- PLAYLIST -->
-<section class="playlist">
-  <h2>Featured Playlist</h2>
-  <iframe src="https://open.spotify.com/embed/playlist/PLAYLIST_ID"></iframe>
 </section>
 
 <!-- STATION GALLERY -->
@@ -222,49 +216,48 @@
   <h2>Station Gallery</h2>
 
   <div class="gallery">
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/rSU2jL4rgxU" allowfullscreen></iframe>
-    </div>
-
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/aRp37q-5Mb0" allowfullscreen></iframe>
-    </div>
-
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/H1uNbv5dUi4" allowfullscreen></iframe>
-    </div>
-
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/RZIjOmHndyE" allowfullscreen></iframe>
-    </div>
+    <div class="video-box"><iframe src="https://www.youtube.com/embed/rSU2jL4rgxU" allowfullscreen></iframe></div>
+    <div class="video-box"><iframe src="https://www.youtube.com/embed/aRp37q-5Mb0" allowfullscreen></iframe></div>
+    <div class="video-box"><iframe src="https://www.youtube.com/embed/H1uNbv5dUi4" allowfullscreen></iframe></div>
+    <div class="video-box"><iframe src="https://www.youtube.com/embed/RZIjOmHndyE" allowfullscreen></iframe></div>
   </div>
 </section>
 
-<!-- DJ SHOWS -->
+<!-- ARTIST SUBMISSIONS -->
 <section>
-  <h2>DJ Schedule & Shows</h2>
-  <div class="grid-3">
-    <div class="card"><h3>Morning Soluv</h3><p>Healing + Motivation</p></div>
-    <div class="card"><h3>Artist After Dark</h3><p>Interviews & Premieres</p></div>
-    <div class="card"><h3>Night Frequency</h3><p>Late-night Sonic Therapy</p></div>
-  </div>
-</section>
-
-<!-- REQUEST SONG -->
-<section>
-  <h2>Request a Song</h2>
+  <h2>Artist Submissions</h2>
   <form>
-    <input type="text" placeholder="Your Name">
-    <input type="text" placeholder="Song & Artist">
-    <textarea placeholder="Message"></textarea>
-    <button>Send Request</button>
+    <input type="text" placeholder="Artist Name" />
+    <input type="url" placeholder="Music Link" />
+    <textarea placeholder="Tell us about your work"></textarea>
+    <button>Submit Music</button>
   </form>
+</section>
+
+<!-- ADS & SPONSORS -->
+<section>
+  <h2>Ads & Sponsors</h2>
+  <div class="grid-3">
+    <div class="card">GIVE A GIFT NON PROFIT</div>
+    <div class="card">G4E MOVEMENT</div>
+    <div class="card">Advertise With SOLUV</div>
+  </div>
+</section>
+
+<!-- WHY SOLUV -->
+<section>
+  <h2>Why SOLUV Radio</h2>
+  <div class="grid-3">
+    <div class="card"><h3>Mind-First Media</h3><p>We prioritize wellness over algorithms.</p></div>
+    <div class="card"><h3>Independent Artists</h3><p>Real exposure without exploitation.</p></div>
+    <div class="card"><h3>Community Ownership</h3><p>This station grows with its listeners.</p></div>
+  </div>
 </section>
 
 </main>
 
 <footer>
-  <p>© 2026 SOLUV RADIO · Healing Through Sound · Hosted on GitHub Pages</p>
+  <p>© 2026 SOLUV RADIO SHOW · Healing Through Sound · Hosted on GitHub Pages</p>
 </footer>
 
 </body>
